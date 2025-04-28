@@ -15,6 +15,9 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
+// ここでstorageBucketの値を出力
+console.log("STORAGE BUCKET:", process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET);
+
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
@@ -32,4 +35,4 @@ export const uploadImage = async (file: File): Promise<string> => {
   return downloadURL;
 };
 
-export { app, auth, db, storage }; 
+export { app, auth, db, storage };
